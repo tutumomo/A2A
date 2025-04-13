@@ -1,39 +1,39 @@
 @echo off
 echo ----------------------------------------
-echo [INFO] é–‹å§‹è™•ç† Git å°ˆæ¡ˆï¼š%cd%
+echo [INFO] ¶}©l³B²z Git ±M®×¡G%cd%
 echo ----------------------------------------
 
-REM ç¢ºä¿ upstream remote æ­£ç¢ºè¨­å¥½ï¼ˆä¸æœƒç”¨ä¾† pushï¼‰
+REM ½T«O upstream remote ¥¿½T³]¦n¡]¤£·|¥Î¨Ó push¡^
 git remote | findstr "upstream" > nul
 IF ERRORLEVEL 1 (
-    echo [INFO] åŠ å…¥ upstream ä¾†æº...
+    echo [INFO] ¥[¤J upstream ¨Ó·½...
     git remote add upstream https://github.com/google/A2A.git
 ) ELSE (
-    echo [INFO] upstream å·²å­˜åœ¨ï¼Œç•¥éåŠ å…¥ã€‚
+    echo [INFO] upstream ¤w¦s¦b¡A²¤¹L¥[¤J¡C
 )
 
-REM åŠ å¼·é˜²å‘†ï¼šè¨­ç‚ºä¸å…è¨± push åˆ° upstream
+REM ¥[±j¨¾§b¡G³]¬°¤£¤¹³\ push ¨ì upstream
 git remote set-url --push upstream no_push
 
-REM æ‹‰åŸå§‹ä½œè€…æ›´æ–°åˆ°æœ¬åœ°
+REM ©Ô­ì©l§@ªÌ§ó·s¨ì¥»¦a
 echo [INFO] Fetch + Pull upstream/main ...
 git fetch upstream
 git pull upstream main
 
-REM é¡¯ç¤ºç‹€æ…‹
-echo [INFO] ç•¶å‰ Git ç‹€æ…‹å¦‚ä¸‹ï¼š
+REM Åã¥Üª¬ºA
+echo [INFO] ·í«e Git ª¬ºA¦p¤U¡G
 git status
 
-REM ä¿ç•™ç¢ºèªå‹•ä½œï¼ˆå¯æ‹¿æ‰ï¼‰
+REM «O¯d½T»{°Ê§@¡]¥i®³±¼¡^
 pause
 
-REM æäº¤è‡ªå·±çš„è®Šæ›´ä¸¦æ¨åˆ° forkï¼ˆoriginï¼‰
-echo [INFO] é–‹å§‹ commit ä¸¦ push åˆ° origin ...
+REM ´£¥æ¦Û¤vªºÅÜ§ó¨Ã±À¨ì fork¡]origin¡^
+echo [INFO] ¶}©l commit ¨Ã push ¨ì origin ...
 git add .
-git commit -m "æ›´æ–°"
+git commit -m "§ó·s"
 git push origin main
 
 echo ----------------------------------------
-echo [å®Œæˆ] èˆ‡ upstream åŒæ­¥ï¼Œä¸¦æ¨é€è‡³ originã€‚
+echo [§¹¦¨] »P upstream ¦P¨B¡A¨Ã±À°e¦Ü origin¡C
 echo ----------------------------------------
 pause
